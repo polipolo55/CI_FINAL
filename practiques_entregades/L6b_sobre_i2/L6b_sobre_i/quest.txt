@@ -1,0 +1,32 @@
+Pol Casanovas Puig Marc Ortge Lleonart
+
+1. polling
+
+2. Sí, hem configurat CCP3CON
+
+3. ANSELE com analògic la resta digitals
+
+4.	ADCON0bits.CHS = 6;
+	ADCON2bits.ADCS = 2;
+	ADCON1bits.NVCFG = 0;
+	ADCON1bits.PVCFG = 0;
+	ADCON2bits.ADFM = 1;
+	ADCON2bits.ACQT = 1;
+	ADCON0bits.ADON = 1;
+	ADCON1bits.TRIGSEL = 0;
+	
+5. és el delay entre lectures del adc respecte la Fosc
+
+6. a 1 que és 2TAD  que es Fosc / 32
+
+7. temps que els capacitadors estan rebent la senyal analogica
+
+8. 4 us 
+
+9. 0.0073895s
+
+10. 0.003076
+
+11. fem un càlcul aproximat similar a una regla de tres, on hem mirat els valors que arribava el voltatge amb una temperatura primer de 0 i després de 50, aconseguint així quan augmentava la temperatura per cada tic de l'adc.
+	això ens dona el següent càlcul: double newTemp = (voltage - 1.14) * 19.45526; on 1.14 es el voltatge quan t = 0 i 19.45526 es el valor que augmenta la temperatura per cada unitat de voltatge
+

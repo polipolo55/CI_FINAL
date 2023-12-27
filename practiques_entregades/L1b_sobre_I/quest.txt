@@ -1,0 +1,20 @@
+1- 330 ohms 15,15mA
+
+2- un ha de ser pull up resistor i l'altre pull down
+
+3- fent servir la formula de caiguda de tensio Vout = Vin * (Rdown / Rup + Rdown) ens dona 369.86 ohms i la segona es 1000 perque es el potenciometre
+
+4- si fem la formula formula dels extrems del condensador i la aillem t és 30.37 ms, la constant de temps es 0.01s i es mesura en segons
+
+5- el RB0 apaga com toggle fa toggle del led verd i el RB1 fa que s'apagi mentres esta premut
+
+Boto0 = RB0
+Boto1 = RB1
+led = RC0
+
+if (Boto0 == HIGH) 
+	if (led == LOW) led = HIGH
+	else led = LOW
+	
+while (Boto1 == HIGH)
+	led = HIGH
